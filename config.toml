@@ -1,7 +1,7 @@
 baseURL = "http://99devops.com"
 languageCode = "en-us"
 title = "99devops"
-theme = "ink"
+theme = "hugo-ink"
 paginate = 5
 
 copyright = "© Copyright notice"
