@@ -45,10 +45,16 @@ name = "Resume"
 url = "/resume.pdf"
 weight = 3
 
+
 [[menu.main]]
 name = "Tags"
 url = "/tags"
 weight = 4
+
+[[menu.main]]
+name = "About me"
+url = "/about"
+weight = 3
 
 [[params.social]]
 name = "Github"
