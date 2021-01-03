@@ -3,7 +3,7 @@ title: "Why should everyone in the team be involved in the recruitment process?"
 date: "2020-10-11"
 description: "Article describing how we need to participate in recruiting process."
 tags: [recruiting, hiring, interview]
-categories: [themes, syntax]
+categories: [tech, hiring]
 ---
 
 This article tells my personal experience about recruiting and why everyone should be involved.

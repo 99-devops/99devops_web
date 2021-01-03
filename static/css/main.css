@@ -384,9 +384,11 @@ ul {
     border-top: 1px solid #f4f4f4;
     margin-top: 40px;
     padding: 15px 0;
+
 }
     .footer a {
         color: #666;
+
     }
     .footer a:hover {
         color: #3700ff;
