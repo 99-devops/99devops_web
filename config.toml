@@ -1,9 +1,8 @@
-baseURL = "http://99devops.com"
+baseURL = "/"
 languageCode = "en-us"
 title = "99devops"
 theme = "hugo-ink"
 paginate = 5
-baseurl = "/"
 
 copyright = "© Copyright notice"
 
