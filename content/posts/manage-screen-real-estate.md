@@ -6,6 +6,16 @@ draft: false
 
 Are you using all the real-estate that screen has to offer ?
 
+<!--more-->
+
+Do you want your screen to look from this mess 
+
+![Unmanaged](/img/unmanaged.png)
+
+To this fully utilized clutter free
+![Managed](/img/managed.png)
+
+
 I am sure people who have used i3 know the importance of managing screen real-estate to its otmost potential. While i3 is a great tiling window manager of Linux and is really great for managing your workspaces. 
 
 The basic idea is that you should be using all the real-estate your desktop has to offer, all the time. 
@@ -73,7 +83,7 @@ Once you are done with that, now we need to configure it.
 
 follow this command
 ```
-touch ~/.yabair
+touch ~/.yabairc
 chmod +x ~/.yabairc
 ```
 
