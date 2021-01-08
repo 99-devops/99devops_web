@@ -1,9 +1,10 @@
 ---
 title: "Want to increase productivity! Start with managing your screen real-estate first "
 date: 2021-01-08T17:51:47+11:00
-draft: true
+draft: false
 ---
-# Are you using all the real-estate that screen has to offer ?
+
+Are you using all the real-estate that screen has to offer ?
 
 I am sure people who have used i3 know the importance of managing screen real-estate to its otmost potential. While i3 is a great tiling window manager of Linux and is really great for managing your workspaces. 
 
