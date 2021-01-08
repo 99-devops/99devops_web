@@ -1,14 +1,15 @@
 ---
 title: "Want to increase productivity! Start with managing your screen real-estate first "
+description: "Manage your desktop screen effeciently with yabai and skhd"
 date: 2021-01-08T17:51:47+11:00
+tags: [devops, SRE, productivity]
+categories: [DevOps, SRE]
 draft: false
 ---
-
 Are you using all the real-estate that screen has to offer ?
 
-<!--more-->
-
-Do you want your screen to look from this mess 
+Do you want your screen to look from this mess
+ <!--more  -->
 
 ![Unmanaged](/img/unmanaged.png)
 
