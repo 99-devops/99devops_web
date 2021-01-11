@@ -1,8 +1,8 @@
 ---
-title: "Base56"
+title: "What is Base56 and how is it different from base58 and base62 ?"
 date: 2021-01-12T08:31:31+11:00
 draft: false
-description: "What is base56 and how is it different from base63"
+description: "What is base56 and how is it different from base62"
 tags: [linux, security]
 categories: [devops]
 ---
