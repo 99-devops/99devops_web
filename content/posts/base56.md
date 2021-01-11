@@ -15,7 +15,9 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ0123456789
 
 Now, take time and look at all those letters above and see which letter are confusing. 
 
-I think you are know aware of what the problem is with this implementation. There are some confusing characters like '1' and 'l', '0' and 'o'
+I think you are now aware of what the problem is with this implementation. 
+
+There are some confusing characters like '1' and 'l', '0' and 'o'
 
 So, lets remove those characters.
 
