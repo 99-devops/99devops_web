@@ -42,4 +42,13 @@
 	{{- if isset .Site.Params "customjs" -}}
 		{{- range .Site.Params.customJS }}<script src="{{ $.Site.BaseURL }}{{ . }}"></script>{{- end }}
 	{{- end }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLR6WCHPT8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZLR6WCHPT8');
+</script>
 </head>
