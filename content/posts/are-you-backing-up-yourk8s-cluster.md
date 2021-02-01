@@ -8,7 +8,7 @@ categories: [devops]
 ---
 "Backup not tested is backup not done"
 
-![Velero](/img/velero.png))
+![Velero](/img/velero.png)
 
 You might have heard this phrase so many time but it has the same impact even if you listen to it thousands more. If you are taking backup and not testing restoring it, then you are in a false dilemma and depending on sheer dumb luck. On this note,
 
