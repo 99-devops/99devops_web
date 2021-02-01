@@ -4,7 +4,7 @@ date: 2021-02-01T16:56:13+11:00
 draft: false
 ---
 
-Today, i will show you how you can run your own multi-regoin k8s cluster. First of all,you need to have 3 working vm ready so that we can work on. For this demo, i have created 3 VMs on vultr cloud provider which can be seen in the following image.
+Today, i will show you how you can run your own multi-region k8s cluster. First of all,you need to have 3 working vm ready so that we can work on. For this demo, i have created 3 VMs on vultr cloud provider which can be seen in the following image.
 
 ![Vultr](/img/vultr-ym.png)
 
@@ -129,7 +129,7 @@ sudo swapoff -a
 
 ## Install docker (On All Nodes)
 
-We will be using dokcer as CNI for kuberneter. 
+We will be using dokcer as CNI for kubernetes. 
 
 ```
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -173,7 +173,7 @@ sudo systemctl enable docker
 
 ## Initializing kubernetes cluster (On Master Node)
 
-Now run following command to initialize kuberneter master node
+Now run following command to initialize kubernetes master node
 ```
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=NumCPU,Mem
 ```
@@ -208,7 +208,7 @@ master-node    Ready    control-plane,master   18m   v1.20.2
 
 Paster the kubeadm join which was provided when you ran kubeadm init command.
 
-NOTE: If you are using clound VM, make sure the port 6443 is enabled on your VM so that the master and worker nodes can communicate with each other.
+NOTE: If you are using cloud VM, make sure the port 6443 is enabled on your VM so that the master and worker nodes can communicate with each other.
 
 ```
 kubeadm join 149.28.152.4:6443 --token 6phmnm.xu4ot5287s5zsa5t     --discovery-token-ca-cert-hash sha256:1d01487792f54ec95d56d3a5cf9525858411da6b4b9c5d8db80f3275b182a693 
