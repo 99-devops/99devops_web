@@ -1,5 +1,5 @@
 ---
-title: "BOYKC - Build Your Own Kubernetes Cluster"
+title: "BYOKC - Build Your Own Kubernetes Cluster"
 date: 2021-02-01T16:56:13+11:00
 draft: false
 ---
