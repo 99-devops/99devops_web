@@ -1,16 +1,16 @@
 ---
-title: "BYOKC - Build Your Own Kubernetes Cluster"
+title: "BYOK8S - Build Your Own Kubernetes Cluster"
 date: 2021-02-01T16:56:13+11:00
 draft: false
 ---
 
-Today i will show you how you can run your own k8s cluster. First of all, i you need to have 3 working vm ready. For this demo, i have created 3 VMs on vultr cloud provider which can be seen in the following image.
+Today, i will show you how you can run your own multi-regoin k8s cluster. First of all,you need to have 3 working vm ready so that we can work on. For this demo, i have created 3 VMs on vultr cloud provider which can be seen in the following image.
 
 ![Vultr](/img/vultr-ym.png)
 
 Now, once you have vm working, there are couple of things that needs to be done.
 
-## System configuration  and Installing kubelet, kubeadm and kubectl (On all nodes)
+## System configuration and Installing kubelet, kubeadm and kubectl (On all nodes)
 
 First, edit the host file of each vm public IPs and hostname in /etc/hosts file.
 
