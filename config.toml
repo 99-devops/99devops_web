@@ -5,7 +5,7 @@ theme = "hugo-ink"
 paginate = 5
 
 copyright = "© Copyright notice"
-
+googleAnalytics="G-ZLR6WCHPT8"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
