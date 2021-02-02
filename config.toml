@@ -9,7 +9,7 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-googleAnalytics = "UG-ZLR6WCHPT8"
+googleAnalytics = "G-ZLR6WCHPT8"
 disqusShortname = "ink-demo"
 
 [params]
