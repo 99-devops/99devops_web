@@ -2,10 +2,12 @@
 title: "Find All Sleeping Process"
 date: 2020-12-02T21:13:15+11:00
 draft: false
+tags: [linux, sre, interview]
+categories: [linux, interview]
 ---
-![Unmanaged](/img/sleeping.png)
-
 Hello today, i am going to show you how you can find all the processes that are sleeping.
+
+![Unmanaged](/img/sleeping.png)
 
 First you need to see what are the fields in ps command.
 
