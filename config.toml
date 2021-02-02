@@ -5,12 +5,11 @@ theme = "hugo-ink"
 paginate = 5
 
 copyright = "© Copyright notice"
-googleAnalytics="G-ZLR6WCHPT8"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-googleAnalytics = "UA-123-45"
+googleAnalytics = "UG-ZLR6WCHPT8"
 disqusShortname = "ink-demo"
 
 [params]
