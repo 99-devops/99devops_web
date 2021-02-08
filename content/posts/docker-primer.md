@@ -11,7 +11,7 @@ You might know that docker and kubernetes are becoming very popular and having s
 
 # A primer on Docker and Kubernetes (k8s)
 
-![Unmanaged](/img/docker-primer.png)
+![docker-k8s](/img/docker-k8s.png)
 
 ### A compiled learning resource for DevOps Engineer and Site Reliability Engineering enthusiasts.
 
