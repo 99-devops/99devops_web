@@ -1,8 +1,8 @@
 ---
-title: "A Primer on Docker and Kuberneter for DevOps and Site Reliability Enthusiasts."
+title: "A Primer on Docker and Kubernetes for DevOps and Site Reliability Enthusiasts."
 date: 2021-02-08T08:31:31+11:00
 draft: false
-description: "A Primer on Docker and Kuberneter for DevOps and Site Reliability Enthusiasts."
+description: "A Primer on Docker and Kubernetes for DevOps and Site Reliability Enthusiasts."
 tags: [docker, kubernetes]
 categories: [sre, devops]
 ---
