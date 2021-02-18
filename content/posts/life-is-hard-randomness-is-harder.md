@@ -80,6 +80,7 @@ As we discussed, true way to get higher entropy is from random operations like k
 
 When you start your computer, it has low entropy and when you move around play with keyboards, open close programs the entropy is accumulated and PRNG uses these entropy to generate random numbers.
 
+Mac usees Yarrow which is a family of CSPRNG. 
 
 ## What is the entropy of my system ?
 
@@ -198,3 +199,5 @@ https://en.wikipedia.org/wiki//dev/random
 https://openjdk.java.net/jeps/356
 https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator
 https://linux.die.net/man/3/open
+https://unix.stackexchange.com/questions/324209/when-to-use-dev-random-vs-dev-urandom
+https://en.wikipedia.org/wiki/Yarrow_algorithm
