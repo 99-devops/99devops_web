@@ -13,7 +13,7 @@ categories: [linux]
 
 # Table of Contents
 
-[First of all, what is Entropy ?](#First-of-all,-what-is-Entropy-?)
+[First of all, what is Entropy ?](#-First-of-all,-what-is-Entropy-?)
 
 [Is Entropy truly random ?](#Is-Entropy-truly-random-?)
 
