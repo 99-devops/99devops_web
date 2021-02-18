@@ -124,7 +124,7 @@ It's shown in this GIF file
 
 These are the PRNG that we were talking about. It is a special file. It collects noise (entropy) from different sources and generates a random number. The major different between all three of them if that /dev/random blocks process if there is not enough entropy available than requested where as /dev/urandom never block even if PRNG has not fully initialized the seed when we boot the computer or restart it. /dev/arandom blocks after boot until seed has been securely initializes through enough entropy and then never blocks again. Only few OS procive /dev/arandom. 
 
-Each PRNG has a generator which has estimated entropy pool size which we saw above. Random numbers are generated from this pool. When /dev/random is used, it check if there are enough number of size in entropy pool and only return random bytes when there are estimated number of bits of noise in entropy pool. When its empty /dev/rabom blocks until additional environmenal noise is gathered. This is used to serve for CSPRNG (Cryptographically Secure Pseudoarndom Number Generator) which can be used to deliver better random number with highest entropy as possible. 
+Each PRNG has a generator which has estimated entropy pool size which we saw above. Random numbers are generated from this pool. When /dev/random is used, it check if there are enough number of size in entropy pool and only return random bytes when there are estimated number of bits of noise in entropy pool. When its empty /dev/random blocks until additional environmental noise is gathered. This is used to serve for CSPRNG (Cryptographically Secure Pseudorandom Number Generator) which can be used to deliver better random number with highest entropy as possible. 
 
 on the other hand /dev/urandom is a non blocking generator which re-uses the available entropy pool to generate more random bits. When you read from /dev/urandom it will 
 
@@ -137,11 +137,11 @@ If your system does not have /dev/random or /dev/urandom, it can be generated us
 
 ## Which one to use /dev/urandom or /dev/random ?
 
-Generally /dev/random and /dev/urandom are used as /dev/arandom is similar to /dev/urandom/. /dev/urandom is used in plce where there is constant need of random numbers and the actual randomness is not too much important while /dev/random is used when there is security in the picture and randomness needs to be reliable. When system boots, the system is less on entropy and random bits generated from /dev/urandom could not be truly random.
+Generally /dev/random and /dev/urandom are used as /dev/arandom is similar to /dev/urandom/. /dev/urandom is used in place where there is constant need of random numbers and the actual randomness is not too much important while /dev/random is used when there is security in the picture and randomness needs to be reliable. When system boots, the system is less on entropy and random bits generated from /dev/urandom could not be truly random.
 
 It is recommended to use /dev/urandom which your program is generatng random numbers as we do not want application to halt because system does not have enough entropy. It just needs a random number which can be given by /dev/urandom.
 
-If the application is mission critical and is very closely dependent of security, then use /dev/random as we can get more random data using this compared to /dev/urandom but stil random bytes provided by /dev/urandom produces good random bytes of cryptographic quality which it gets from OS during startup.
+If the application is mission critical and is very closely dependent of security, then use /dev/random as we can get more random data using this compared to /dev/urandom but still random bytes provided by /dev/urandom produces good random bytes of cryptographic quality which it gets from OS during startup.
 
 For almost all programs use /dev/urandom because of its non-blocking state.
 
@@ -167,7 +167,7 @@ close(3)
 
 #### Python script generating random number
 
-In python random number are generated using <code>random.seed(a=None, version=2)</code> in which a is the seed. If value of 'a' is not defined the OS system time is used, and if entropy seed as we discussed above is provided then it is used and With version 2 (the default), a str, bytes, or bytearray object gets converted to an int and all of its bits are used. 
+In python random number are generated using <code>random.seed(a=None, version=2)</code> in which a is the seed. If value of 'a' is not defined the OS system time is used, and if entropy seed as we discussed above is provided then it is used and With version 2 (the default), a str, bytes, or byte array object gets converted to an int and all of its bits are used. 
 
 Here is a simple python script that generates random number.If you see the system calls that are used to run this program and get random number, it also uses /dev/urandom
 ```
@@ -187,3 +187,13 @@ close(3)
 
 FYI, 
 O_RDONLY, O_NOCTTY, O_NONBLOCK are flags on file management system calls on Linux where O_RDONLY means open file for read only, O_NOCTTY means if its set and path identifies a terminal device, open() will not cause terminal device to become the controlling terminal for the process and O_NONBLOCK flag the open() function will return without blocking for the device to be ready or available. Subsequent behaviour of the device is device-specific.
+
+
+## References
+
+https://wiki.archlinux.org/index.php/Random_number_generation
+https://wiki.openssl.org/index.php/Random_Numbers
+https://eprint.iacr.org/2012/251.pdf
+https://en.wikipedia.org/wiki//dev/random
+https://openjdk.java.net/jeps/356
+https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator
