@@ -32,7 +32,7 @@ categories: [linux]
 
 # TL;DR
 
-Randomness is hard. High entropy is needed for better randomness. True randomness cannot be achieved, in fact true randomness means entropy being the highest which is impossible to achieve but we can include events outside systems like physical events to make randomness more random. Use /dev/urandom for your application for day to day use and /dev/random for mission critical applications.
+Randomness is hard. High entropy is needed for better randomness. True randomness cannot be achieved, in fact true randomness means entropy being the highest which is impossible to achieve but we can include events outside systems like physical events to make randomness more random.  Use /dev/urandom for your application for day to day use.
 
 ## First of all, what is Entropy ?
 
@@ -141,13 +141,13 @@ Generally /dev/random and /dev/urandom are used as /dev/arandom is similar to /d
 
 It is recommended to use /dev/urandom which your program is generatng random numbers as we do not want application to halt because system does not have enough entropy. It just needs a random number which can be given by /dev/urandom.
 
-If the application is mission critical and is very closely dependent of security, then use /dev/random as we can get more random data using this compared to /dev/urandom.
+If the application is mission critical and is very closely dependent of security, then use /dev/random as we can get more random data using this compared to /dev/urandom but stil random bytes provided by /dev/urandom produces good random bytes of cryptographic quality which it gets from OS during startup.
 
-Most programs use /dev/urandom because of its non-blocking state. Here is few examples which make use of /dev/urandom
+For almost all programs use /dev/urandom because of its non-blocking state.
 
 #### OpenSSL generating random data
 
-Here is openssl generating random bytes of data, it also uses /dev/urandom
+OpenSSL uses its own pseudo random number generator (PRNG), seeded on startup from a source of random data provided by the operating system. It uses <code>rand.c</code>. from the system call Here is openssl generating random bytes of data, it also uses /dev/urandom
 ```
 strace -xe trace=file,read,write,close openssl rand 10
 ```
@@ -166,6 +166,8 @@ close(3)
 
 
 #### Python script generating random number
+
+In python random number are generated using <code>random.seed(a=None, version=2)</code> in which a is the seed. If value of 'a' is not defined the OS system time is used, and if entropy seed as we discussed above is provided then it is used and With version 2 (the default), a str, bytes, or bytearray object gets converted to an int and all of its bits are used. 
 
 Here is a simple python script that generates random number.If you see the system calls that are used to run this program and get random number, it also uses /dev/urandom
 ```
