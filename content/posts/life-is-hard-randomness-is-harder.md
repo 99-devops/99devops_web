@@ -197,3 +197,4 @@ https://eprint.iacr.org/2012/251.pdf
 https://en.wikipedia.org/wiki//dev/random
 https://openjdk.java.net/jeps/356
 https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator
+https://linux.die.net/man/3/open
