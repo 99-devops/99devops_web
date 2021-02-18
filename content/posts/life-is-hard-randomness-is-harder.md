@@ -107,7 +107,7 @@ Every 1.0s: cat /proc/sys/kernel/random/entropy_avail                           
 
 now, once i run  a command to generate random bits, it is all used up and starts again to accumulate entropy. Run this command and watch entropy of the system go down.
 ```
-cat /dev/random > random_bits.txt
+cat /dev/random > random-data.txt
 ```
 
 now my entropy is used up and its starting again which i can check using following command
