@@ -36,7 +36,7 @@ Randomness is hard. High entropy is needed for better randomness. True randomnes
 
 ## First of all, what is Entropy ?
 
-Entryopy is the measure of randomness or disorderness in a system where as Randomness is a phenomenon or procedure for getting data that is random. It is a measure of randomness and it increases everytime the randomness in system increases. Now another question, what is randomness ? Randomness in what ?
+Entropy is the measure of randomness or disorderness in a system where as Randomness is a phenomenon or procedure for getting data that is random. It is a measure of randomness and it increases everytime the randomness in system increases. Now another question, what is randomness ? Randomness in what ?
 
 ## Now what is Randomness then, Randomness in what ?
 
@@ -53,15 +53,15 @@ In order to get a truly random number you need to have high entropy. Higher the 
 
 ## Why its important to generate true random numbers ?
 
-It is due to security reasons.  Generally there are different algorithms that use generation of random number which are inturn used to create crypto keys. If there numbers are not random then the cryptographic keys inturn will be weaker and could be predicted relatively easily. This is the the major reason finding ways to generate true random numbers.
+It is due to security reasons.  Generally there are different algorithms that use generation of random number which are in turn used to create crypto keys. If there numbers are not random then the cryptographic keys in turn will be weaker and could be predicted relatively easily. This is the the major reason finding ways to generate true random numbers.
 
 ## How to Linux generates random numbers ?
 
-Machines or OS are dumb. They only do what they are programmed to do. Machine are given set of instructions which they execute to get a random number. If there is no human event, eventually they will start creating pattern for that randomness. There is not way computer can perform those random events, so computer use so called Pseudo random numbers. They simulate randomness using algorithms and those algorithms generates a sequence of numbers that looks random. Note that, it will generate random looking sequence of number but how to make them actually random ?
+Machines or OS are dumb. They only do what they are programmed to do. Machine are given set of instructions which they execute to get a random number. If there is no human event, eventually they will start creating pattern for that randomness. There is no way computer can perform those random events, so computer use so called Pseudo random numbers. They simulate randomness using algorithms and those algorithms generates a sequence of numbers that looks random. Note that, it will generate random looking sequence of number but how to make them actually random ?
 
 This is the reason nature or human are involved in generating true randomness into a system. Physical activities like typing, moving mouse, audio, video data tend to be random that we want and involving them into the system could give us more entropy which caused entropy to go high, and higher the entropy, higher the randomness.
 
-Here, PRNG (Pseudo Random Number Generator) comes into the picture. PRNG uses alrogithms to generate random looking number. Linux was the first OS to implement PRNG into its kernel. Linux uses Pseudo Random Number Generator (PRNG) or Random Number Generator (CSPRNG). These use mathematical formulas to achieve maximum randomness. Linux was the first OS to include PRNG on its kernel. PRNG is a set of mathematical formulas implemented in program to generate large quantities of random digits that are needed. 
+Here, PRNG (Pseudo Random Number Generator) comes into the picture. PRNG uses algorithms to generate random looking number. Linux was the first OS to implement PRNG into its kernel. Linux uses Pseudo Random Number Generator (PRNG) or Random Number Generator (CSPRNG). These use mathematical formulas to achieve maximum randomness. Linux was the first OS to include PRNG on its kernel. PRNG is a set of mathematical formulas implemented in program to generate large quantities of random digits that are needed. 
 
 You can see the image here on how PRNG works
 
@@ -76,7 +76,7 @@ PRNG uses available entropy to generate random numbers. But how is entropy colle
 
 ![prng](/img/prng-2.png)
 
-As we discussed, true way to get higher entropy is from random operations like keyboard typings, mouse movements, audio data, video source. Once the entropy source is collected, it is kept in the entropy pool, and everytime the PRNG requires a random seed it no deterministically chooses a seed from the pool. Once PRNG seed is applied, PRNG uses formulas to generate random data as mentioned above. They make random character data and make it available to OS and process to use through special fieles called /dev/urandom or /dev/random or /dev/arandom. Some linux systems like fedora allows multiple entropy sources as well. 
+As we discussed, true way to get higher entropy is from random operations like keyboard typings, mouse movements, audio data, video source. Once the entropy source is collected, it is kept in the entropy pool, and everytime the PRNG requires a random seed it no deterministically chooses a seed from the pool. Once PRNG seed is applied, PRNG uses formulas to generate random data as mentioned above. They make random character data and make it available to OS and process to use through special files called /dev/urandom or /dev/random or /dev/arandom. Some linux systems like fedora allows multiple entropy sources as well. 
 
 When you start your computer, it has low entropy and when you move around play with keyboards, open close programs the entropy is accumulated and PRNG uses these entropy to generate random numbers.
 
@@ -96,7 +96,7 @@ You can see the entropy accumulation in your system using following command. Run
 watch -n 1 cat /proc/sys/kernel/random/entropy_avail
 ```
 
-let's see how you acn use up all of your available entropy. Run the above watch command on the terminal, and on the another terminal we will use that to generate a random bit number. When you run the command to generate random bit, that entropy accuumulated will be used up and it will be zero again.
+let's see how you acn use up all of your available entropy. Run the above watch command on the terminal, and on the another terminal we will use that to generate a random bit number. When you run the command to generate random bit, that entropy accumulated will be used up and it will be zero again.
 
 let's run this. Currently my entropy available is (From above command)
 ```
@@ -122,7 +122,7 @@ It's shown in this GIF file
 
 ### What are /dev/urandom , /dev/random , /dev/arandom ?
 
-These are the PRNG that we were talking about. It is a special file. It collects noise (entropy) from different sources and generates a random number. The major different between all three of them if that /dev/random blocks process if there is not enough entropy available than requested where as /dev/urandom never block even if PRNG has not fully initialized the seed when we boot the computer or restart it. /dev/arandom blocks after boot until seed has been securely intialized through enough entropy and then never blocks again. Only few OS procive /dev/arandom. 
+These are the PRNG that we were talking about. It is a special file. It collects noise (entropy) from different sources and generates a random number. The major different between all three of them if that /dev/random blocks process if there is not enough entropy available than requested where as /dev/urandom never block even if PRNG has not fully initialized the seed when we boot the computer or restart it. /dev/arandom blocks after boot until seed has been securely initializes through enough entropy and then never blocks again. Only few OS procive /dev/arandom. 
 
 Each PRNG has a generator which has estimated entropy pool size which we saw above. Random numbers are generated from this pool. When /dev/random is used, it check if there are enough number of size in entropy pool and only return random bytes when there are estimated number of bits of noise in entropy pool. When its empty /dev/rabom blocks until additional environmenal noise is gathered. This is used to serve for CSPRNG (Cryptographically Secure Pseudoarndom Number Generator) which can be used to deliver better random number with highest entropy as possible. 
 
