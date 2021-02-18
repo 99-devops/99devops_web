@@ -148,7 +148,9 @@ For almost all programs use /dev/urandom because of its non-blocking state.
 
 #### OpenSSL generating random data
 
-OpenSSL uses its own pseudo random number generator (PRNG), seeded on startup from a source of random data provided by the operating system. It uses <code>rand.c</code>. from the system call Here is openssl generating random bytes of data, it also uses /dev/urandom
+OpenSSL uses its own pseudo random number generator (PRNG), seeded on startup from a source of random data provided by the operating system. It uses <code>rand.c</code>. 
+
+Here is openssl generating random bytes of data, it also uses /dev/urandom
 ```
 strace -xe trace=file,read,write,close openssl rand 10
 ```
