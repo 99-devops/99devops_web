@@ -120,7 +120,7 @@ now my entropy is used up and its starting again which i can check using followi
 It's shown in this GIF file
 ![randomness](/img/random.gif)
 
-### what are /dev/urandom , /dev/random , /dev/arandom ?
+### What are /dev/urandom , /dev/random , /dev/arandom ?
 
 These are the PRNG that we were talking about. It is a special file. It collects noise (entropy) from different sources and generates a random number. The major different between all three of them if that /dev/random blocks process if there is not enough entropy available than requested where as /dev/urandom never block even if PRNG has not fully initialized the seed when we boot the computer or restart it. /dev/arandom blocks after boot until seed has been securely intialized through enough entropy and then never blocks again. Only few OS procive /dev/arandom. 
 
