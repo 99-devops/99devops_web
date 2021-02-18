@@ -2,7 +2,7 @@
 title: "Life is hard, randomness is harder?"
 date: 2021-02-12T14:20:12+11:00
 draft: false
-description: "A descriptive guide when to use /dev/random or /dev/urandom or /dev/arandom in linux"
+description: "A descriptive guide about randomness in linux system and when to use /dev/random or /dev/urandom."
 tags: [devops, linux]
 categories: [linux]
 ---
