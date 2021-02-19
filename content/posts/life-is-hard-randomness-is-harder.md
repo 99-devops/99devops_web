@@ -9,7 +9,7 @@ categories: [linux]
 
 ![random](/img/random.png)
 
-"You might think that creating random number is easy but its not as easy you think. Entropy as we know is the state of randomness, The more entropy we get, the more randomness there is."
+You might think that creating random number is easy but its not as easy you think. Entropy as we know is the state of randomness, The more entropy we get, the more randomness there is.
 
 # TL;DR
 
