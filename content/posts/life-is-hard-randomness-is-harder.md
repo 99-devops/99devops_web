@@ -11,25 +11,6 @@ categories: [linux]
 
 "You might think that creating random number is easy but its not as easy you think. Entropy as we know is the state of randomness, The more entropy we get, the more randomness there is."
 
-# Table of Contents
-
-[First of all, what is Entropy ?](#-First-of-all,-what-is-Entropy-?)
-
-[Is Entropy truly random ?](#Is-Entropy-truly-random-?)
-
-[How to get high entropy ?](#How-to-get-high-entropy-?)
-
-[Why its important to generate true random numbers ](#Why-its-important-to-generate-true-random-numbers-?)
-
-[How to Linux generates random numbers ?](#How-to-Linux-generates-random-numbers-?)
-
-[What is the entropy of my system ?](#What-is-the-entropy-of-my-system-?)
-
-[What are /dev/urandom , /dev/random , /dev/arandom ?](#What-are-/dev/urandom-,-/dev/random-,-/dev/arandom-?)
-
-[Which one to use /dev/urandom or /dev/random ?](#Which-one-to-use-/dev/urandom-r-/dev/random-?)
-
-
 # TL;DR
 
 True Randomness is hard. Cannot be achieved.  Use /dev/urandom for your UNIX apps in day-to-day use. 
