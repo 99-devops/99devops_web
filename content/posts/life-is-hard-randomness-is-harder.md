@@ -1,5 +1,5 @@
 ---
-title: "Life is hard, randomness is harder?"
+title: "Life is hard, randomness is harder !"
 date: 2021-02-12T14:20:12+11:00
 draft: false
 description: "A descriptive guide about randomness in linux system and when to use /dev/random or /dev/urandom."
