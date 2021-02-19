@@ -1,6 +1,6 @@
 ---
 title: "What is wireguard on Azure, I'll do you better why is wireguard on Azure ?"
-date: 2021-02-19T14:20:12+11:00
+date: 2021-02-18T14:20:12+11:00
 draft: false
 description: "wireguard on azure cloud"
 tags: [sre, networking]
