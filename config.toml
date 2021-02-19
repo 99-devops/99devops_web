@@ -38,6 +38,10 @@ name = "All posts"
 url = "/posts"
 weight = 2
 
+[[menu.main]]
+name = "Kubernetes"
+url = "/posts"
+weight = 2
 
 [[menu.main]]
 name = "Tags"
@@ -58,6 +62,12 @@ url = "https://www.twitter.com/99devops"
 name = "Facebook"
 icon = "facebook"
 url = "https://www.facebook.com/99devops"
+
+
+[[params.social]]
+name = "Linkedin"
+icon = "linkedin"
+url = "https://www.linkedin.com/company/99-devops"
 
 [taxonomies]
    tag = "tags"
