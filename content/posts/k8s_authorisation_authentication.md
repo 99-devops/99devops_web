@@ -6,6 +6,8 @@ tags: [devops, sre, k8s]
 categories: [sre, k8s]
 ---
 
+![random](/img/k8s_sec.png)
+
 # Introduction
 
 As we know that using kubeconfig for day to day use is a bad practice, instead each user should be given access based on their account and his/her request should be protected using self signed SSL. This way admin can enforce RBAC on the account and also revoke account if needed.
