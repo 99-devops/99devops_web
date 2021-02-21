@@ -1,6 +1,7 @@
 ---
 title: "Remote access authentication and authorisation using self signed certificates"
-date: "2020-10-11"
+date: "2021-2-21"
+draft: false
 description: "Article describing how we do remote access authentication and authorisation using self signed certificates"
 tags: [devops, sre, k8s]
 categories: [sre, k8s]
