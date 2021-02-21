@@ -111,9 +111,7 @@ prabesh-thapa-authentication   5s    kubernetes.io/kube-apiserver-client   prabe
 kubectl certificate approve prabesh-thapa-authentication
 ```
 
-* Check for CSR status again
-
-if it approved and a certificate has been issued it will show something like this 
+* Check for CSR status again, if it approved and a certificate has been issued it will show something like this 
 
 ```
 kubectl get csr                       
@@ -137,9 +135,9 @@ kubectl get csr $USER -o jsonpath='{.status.certificate}' | base64 --decode > ~/
 ```
 
 ## Preparing kubeconfig for the user
-Create a copy of your kubeconfig file and remove everything except the top 17 lines and add users data. Create a kubeconfig file for user and send it to them along with the key and crt file.
+* Create a copy of your kubeconfig file and remove everything except the top 17 lines and add users data. Create a kubeconfig file for user and send it to them along with the key and crt file.
 
-* make sure the certificate and key file location are properly defined.
+NOTE: make sure the certificate and key file location are properly defined.
 
 
 Example:
