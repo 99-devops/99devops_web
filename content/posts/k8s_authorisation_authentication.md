@@ -1,5 +1,5 @@
 ---
-title: "Remote access authentication and authorisation using self signed certificates"
+title: "Kubernetes remote use authentication and authorisation using self signed certificates"
 date: 2021-02-20T08:31:31+11:00
 draft: false
 description: "Article describing how we do remote access authentication and authorisation using self signed certificates"
@@ -15,8 +15,10 @@ As we know that using kubeconfig for day to day use is a bad practice, instead e
 
 Here is how you can create user account on k8s and authenticate them using certificates.
 
+This process is supposed to be done by the administrator to provide access to other users to the cluster.
+
 # Pre-requisites:
-* Administrator access to the production do cluster
+* Administrator access to the production do cluster, meaning must have admin kubeconfig with you initially.
 * OpenSSL installed
 
 # Guidelines for providing access to the cluster.
