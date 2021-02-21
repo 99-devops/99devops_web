@@ -1,8 +1,8 @@
 ---
-title: "Kubernetes remote use authentication and authorisation using self signed certificates"
+title: "Kubernetes remote user authentication and authorisation using self signed certificates."
 date: 2021-02-20T08:31:31+11:00
 draft: false
-description: "Article describing how we do remote access authentication and authorisation using self signed certificates"
+description: "Article describing how to certificate based authentication stragety for accessing k8s cluster."
 tags: [devops, sre, k8s]
 categories: [sre, k8s]
 ---
