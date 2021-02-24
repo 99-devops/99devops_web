@@ -19,6 +19,14 @@ Source IP not being preserved, instead changed to either LB or Node IP address i
 
 It is a convenient way to send connection information like client IP address across multiple servers like NAT or proxies. It requires little change to infrastructure to limit performance impact. The PROXY protocol's goal is to fill the server's internal structures with the information collected by the proxy that the server would have been able to get by itself if the client was connecting directly to the server instead of via a proxy. The information carried by the protocol are the ones the server would get using getsockname() and getpeername().
 
+If you check the istio-ingress log then you would only see the source add as the Node private address if "externalTrafficPolicy" was set to "Cluster" and Node public address if set to "Local". Which would look like this:
+```
+kube
+│ [2021-02-24T06:30:40.015Z] "GET /spec.json HTTP/2" 200 - "-" 0 41019 6 5 "10.234.<REDACTED>" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" "7c28536b-b6d4-9442-ab6c-744715ed82bf" "httpbin.<DOMAIN>│
+```
+
+As you can see the source ip is shown as 10.234 range which is the node ip rather than actual source IP. This invites a lot of issues for security, monitoring and ACLs.
+
 ## Solution 
 
 In order to preserve source IP, you would need to enable proxy protocol in the underlying loadbalancer whether it be DO or AWS classic LB.
@@ -74,3 +82,5 @@ Now if you check your logs from istio-ingress pod, it should now start showing t
 kube
 │ [2021-02-24T06:30:40.015Z] "GET /spec.json HTTP/2" 200 - "-" 0 41019 6 5 "60.<REDACTED>" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36" "7c28536b-b6d4-9442-ab6c-744715ed82bf" "httpbin.<DOMAIN>│
 ```
+
+now you can see its getting 60.XX range as source ip which is the actual source IP. Now you can use Istio authorization policy for RBAC and ACls and do a lot of things with it.
