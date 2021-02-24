@@ -7,6 +7,7 @@ tags: [linux, sre]
 categories: [sre]
 ---
 
+![Unmanaged](/img/envoy.png)
 
 When you are using Istio, the source ip address gets replaces when it passes through the Loadbalancer and istio ingress, the source ip address gets changed.
 
