@@ -2,7 +2,7 @@
 title: "Preserving source IP address in L4 loadbalancer (AWS, DO) using Istio's Envoy Filter and Proxy protocol."
 date: 2021-02-24T08:31:31+11:00
 draft: false
-description: "This article shows you how you can preserve source IP address in kub"
+description: "This article shows you how you can preserve source IP address in kubernetes using Proxy protocol and istio's envoy proxy filters."
 tags: [linux, sre]
 categories: [sre]
 ---
