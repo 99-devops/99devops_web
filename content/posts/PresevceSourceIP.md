@@ -23,6 +23,9 @@ It is a convenient way to send connection information like client IP address acr
 
 In order to preserve source IP, you would need to enable proxy protocol in the underlying loadbalancer whether it be DO or AWS classic LB.
 
+First,
+1. Annotate / Enable proxy protocol on the Load balancer.
+2. Deploy Envoy filter to look for proxy protocol headers.
 
 ### Using DO Loadbalancer
 
