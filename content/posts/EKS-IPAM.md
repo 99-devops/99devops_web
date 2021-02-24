@@ -1,5 +1,5 @@
 ---
-title: "Envor proxy running but not ready - AWS EKS Istio"
+title: "Envoy proxy running but not ready - AWS EKS Istio"
 date: 2021-02-24T08:31:31+11:00
 draft: false
 description: "Envoy proxy is NOT ready: config not received from Pilot"
@@ -41,7 +41,7 @@ kube-proxy-998jb           1/1     Running   1          6d23h
 kube-proxy-z9rzv           1/1     Running   1          6d23  
 ```
 
-Delete that pod and it will re-spwarn restart Nodeport service which will reinitialize CNI and IPAM daemon.
+Delete that pod and it will re-spawn the daemonset and will reinitialize CNI and IPAM daemon.
 
 
 After reinitialization
