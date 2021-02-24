@@ -1,6 +1,6 @@
 ---
 title: "Envoy proxy running but not ready - AWS EKS Istio"
-date: 2021-02-24T16:31:31+11:00
+date: 2021-02-22T16:31:31+11:00
 draft: false
 description: "Envoy proxy is NOT ready: config not received from Pilot"
 tags: [linux, sre]
