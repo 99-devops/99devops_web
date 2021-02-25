@@ -41,7 +41,7 @@ Here is the example of a healthy system.
 ```
 free -m
 
-                       total        used        free      shared  buff/cache   available
+               total        used        free      shared  buff/cache   available
 Mem:           7892        2645         234         159        4512          4817
 Swap:          7935        3183        4752
 ```
