@@ -9,9 +9,11 @@ categories: [sre]
 
 ![guage](/img/guage.png)
 
-## Are you scared that memory use of your Kubernetes node going above 85% all the time, then do not worry its normal? 
+## Are you scared that memory use of your Kubernetes node going above 85% all the time
 
-Then you need to know why memory in use is different from memory available. The above picture might have startled you at first but don’t worry, we will discuss why that is perfectly normal and even good. First, let’s see what is the difference between free and available memory?
+### then don't worry, its normal. 
+
+The above picture might have startled you at first but don’t worry, we will discuss why that is perfectly normal and even good. Let’s see what is the difference between free and available memory?
 
 ## What is Free memory?
 
