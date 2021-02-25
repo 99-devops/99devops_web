@@ -1,6 +1,6 @@
 ---
 title: "Why is the total memory use of my Kubernetes worker node always above 90%?"
-date: 2021-02-24T08:31:31+11:00
+date: 2021-02-25T08:31:31+11:00
 draft: false
 description: "This article describes the difference between free and available memory and why you should not be worried when you K8s cluster node memory usage is always high."
 tags: [linux, sre]
