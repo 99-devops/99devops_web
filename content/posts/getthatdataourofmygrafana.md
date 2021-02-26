@@ -25,7 +25,7 @@ You might have done that because only those data were important, you do not care
 
 Don’t get me wrong here, if you are a performance engineer, these things are one of the most important metrics, but for SREs and DevOps perspective, they are not that useful. 
 
-So, this way we need to selectively pick the metrics that we want to put in front of our eye for monitoring. 
+We need to selectively pick the metrics that we want to put in front of our eye for monitoring and will create value to organisation.
 
 ## What is selective monitoring?
 
