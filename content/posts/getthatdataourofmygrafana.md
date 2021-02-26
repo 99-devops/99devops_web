@@ -33,8 +33,8 @@ Selective monitoring as the name suggests a process where you only take the data
 
 This would give you 3 benefit:
 1.	Easier to interpret dashboard with less clutter of information.
-2.	Saves get to you some bucks
-3.	But most importantly, you know what metrics you are sending and how valuable it is.
+2.	Saves your company some bucks
+3.	But most importantly, you know what metrics you are being sent and how valuable they are to you.
 
 ## Selective monitoring in Prometheus using DROP and KEEP actions
 
