@@ -78,7 +78,7 @@ Grafana offers a cloud-based SaaS solution for collecting metrics and visualizat
 1.	You are vendor locked in
 2.	You are sending data, which means it is costing you money.
 
-Grafana cloud offers no additional cost for around ~15k active series data and if you go beyond that, they start charging you for all the additional amount of data. They charge $16/month for 1000 series. This might look insignificant at first, we also thought the same, then we fired up node exporter and metrics from one of our k8s cluster and started sending metrics over.
+Grafana cloud offers no additional cost for around ~15k active series data and if you go beyond that, they start charging you for all the additional amount of data. They charge $16/month for 1000 series. This might look insignificant at first, we also thought the same, then we fired up node exporter and cAdvisor metrics from one of our k8s cluster and started sending metrics over.
 
 After a couple of days, we realized that it was showing, we were about to be billed ~$300 for all the additional cost. Working in an enterprise such an amount is insignificant, but still, we wanted to see why we were getting billed that much but not just $49 instead. 
 
