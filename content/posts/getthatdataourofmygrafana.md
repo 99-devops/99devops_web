@@ -118,7 +118,7 @@ Here are some dashboards with only the information that we needed.
 
 ![guage](/img/8.png)
 
-![guage](/img/8.png)
+![guage](/img/9.png)
 
 ## Conclusion
 
