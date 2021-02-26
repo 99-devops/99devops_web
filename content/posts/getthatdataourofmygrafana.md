@@ -1,5 +1,5 @@
 ---
-title: "Are you are just hoarding useless data like garbage? A short descriptive guide on selective monitoring."
+title: "Are you are just hoarding useless data like garbage? A short descriptive intro on selective monitoring."
 date: 2021-02-26T08:31:31+11:00
 draft: false
 description: "This article describes how you can implement selective monitoring using Prometheus to make sure only useful data are gathered and visualized."
