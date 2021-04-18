@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes remote user authentication using self signed certificates."
 date: 2021-04-18T08:31:31+11:00
-draft: true
+draft: false
 description: "Article describing how to certificate based authentication stragety for accessing k8s cluster."
 tags: [devops, sre, k8s]
 categories: [sre, k8s]
@@ -9,7 +9,9 @@ categories: [sre, k8s]
 
 # Introduction
 
-As we know that using kubeconfig for day to day use is a bad practice, instead each user should be given access based on their account and his/her request should be protected using self signed SSL. This way admin can enforce RBAC on the account and also revoke account if needed.
+Using admin kubeconfig for day to day use is a bad practice.
+
+Instead each user should be given access based on their account and his/her request should be protected using self signed SSL. This way admin can enforce RBAC on the account and also revoke account if needed.
 
 Here is how you can create user account on k8s and authenticate them using certificates.
 
