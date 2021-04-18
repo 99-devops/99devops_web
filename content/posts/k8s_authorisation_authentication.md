@@ -1,13 +1,11 @@
 ---
 title: "Kubernetes remote user authentication and authorisation using self signed certificates."
 date: 2021-02-20T08:31:31+11:00
-draft: false
+draft: true
 description: "Article describing how to certificate based authentication stragety for accessing k8s cluster."
 tags: [devops, sre, k8s]
 categories: [sre, k8s]
 ---
-
-![random](/img/k8s_sec.png)
 
 # Introduction
 
@@ -137,7 +135,8 @@ kubectl get csr $USER -o jsonpath='{.status.certificate}' | base64 --decode > ~/
 ```
 
 ## Preparing kubeconfig for the user
-* Create a copy of your kubeconfig file and remove everything except the top 17 lines and add users data. Create a kubeconfig file for user and send it to them along with the key and crt file.
+
+* Create a copy of your kubeconfig file and remove everything except the following lines , replace the things mentioned here and add users data. Create a kubeconfig file for user and send it to them along with the key and crt file.
 
 NOTE: make sure the certificate and key file location are properly defined.
 
@@ -149,7 +148,7 @@ apiVersion: v1
 clusters:
 - cluster:
     certificate-authority-data: LS0tLLSFTIPSMDIJERMLKSDKJKJLDFKJLRS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm<REDACTED>
-    server: https://46230e4-1386-dsfklj-dfkj-4ed.k8s.ondigitalocean.com
+    server: <K8S SERVER URL>
   name: doks
 contexts:
 - context:
@@ -168,9 +167,11 @@ EOF
 ```
 
 ## Test the access
+
+you can test the access using that kubeconfig and use k8s can-i simulation.
+
 ```
 kubectl --kubeconfig=/Users/prabeshthapa/certs/config-prabesh-thapa cluster-info
 
-Kubernetes master is running at https://2csdf8424-a23b2-445eb-128d-sdfkj.k8s.ondigitalocean.com
-CoreDNS is running at https://fdf-gh-gh-gh-jh.k8s.ondigitalocean.com/api/v1/names
+Kubernetes master is running at <k8s server URL>
 ```
