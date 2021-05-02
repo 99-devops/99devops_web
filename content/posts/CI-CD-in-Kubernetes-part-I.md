@@ -13,7 +13,7 @@ CI / CD has been a major part of current IT operations. In this series of we wil
 
 We will learn how to do CI / CD of a containerised service. For this, we will learn by doing. 
 
-# Before we begin
+## Before we begin
 
 ### What is CI (Continuous Integration) ?
 
@@ -21,13 +21,13 @@ CI (Continuous Integration) is a process of automating code integration from mul
 
 In this article we are doing to see an implemet of CI.
 
-# Learn by doing
+## Learn by doing
 
 In this first part, we will create an application and dockerise it. This would invole creating an application from scratch and containerise it using docker.
 
 For this task, we will be working on creating a crypto pricing bot and which will check the price of crypto coins every hour and inform you. Later, we will work on running the application in kubernetes using CI / CD.
 
-# Learning outcomes
+## Learning outcomes
 
 After completing the series of articles, you will be able to do following things.
 
@@ -37,7 +37,7 @@ After completing the series of articles, you will be able to do following things
 3. Write kubernetes manifests for application to be hosted on kubernetes.
 4. Automate all these operations using Github Actions.
 
-# Pre
+## Pre
 
 Before you start working on it, make sure you are inside your application directory.
 
@@ -47,9 +47,9 @@ mkdir -p crypto-bot
 cd crypto-bot
 ```
 
-### Task 1 (Get yourself slack workspace, slack channel, slack bot and slack token.)
+### Task 1
 
-Before we create our application, we need to do extra things some things ready i.e.
+Get yourself slack workspace, slack channel, slack bot and slack token. Before we create our application, we need to do extra things some things ready i.e.
 
 1. Slack workspace
 
@@ -66,6 +66,8 @@ Before we create our application, we need to do extra things some things ready i
 7. Github repository
 
 8. Dockerhub account
+
+### Solution 1
 
 You can follow this video until 5 min to get your slack workspace, channel, bot setup and get the API token.
 
@@ -86,7 +88,9 @@ Note down following things:
 2. Slack bot username
 
 3. Slack token somespace
-# Creating a crypto bot application
+
+You should be able to create git repo and docker hub, by yourself. 
+## Creating a crypto bot application
 
 Now, since we have setup out notification section, let's create a trading bot. Our crypto bot is simple. It will run API request to a provider to fetch crypto latest pricing information. I will be using python for this but you can use any language of your choice. 
 
@@ -205,7 +209,7 @@ Wooo..hooo....
 
 Congratulations. You have created a bot which checks BTC price and does fake buys of BTC and notifies in slack about your transaction.
 
-# Containerise your application
+## Containerise your application
 
 Now, since we have our application ready, we are ready to containerise it. I will be using docker for it, but you can use any container runtime to create a container.
 
@@ -257,13 +261,13 @@ You should see the same message notification in slack.
 
 ![slack_notification](/img/slack_notification.png)
 
-# Pushing image to registry
+## Pushing image to registry
 
 Kubernetes pull image from container registry. We will be using DockerHub as our container registry. You can use any other container registry like Jfrog etc.
 
 Before this, you would need docker hub username and password. You can sign up for docker hub if you do not already have an account.
 
-### Task 4 (Create dockerhub  repo and push image to docker hub automatically using Github Actions)
+### Task 4
 
 Create docker hub account and save username and access token somewhere.
 ### Solution
@@ -388,7 +392,7 @@ Go to actions in tabs in your repository, you should see the CI build running an
 ![dockerhub-image-push](/img/dockerhub-image-push.png)
 
 
-# What did we learned ?
+## What did we learned ?
 
 1. Use cURL to send post requests
 2. Parse Json response using python
@@ -397,7 +401,7 @@ Go to actions in tabs in your repository, you should see the CI build running an
 5. Run docker image
 6. Push image to docker hub using github action
 7. Hands-on continuous integration
-# Conclusion
+## Conclusion
 
 This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. In next article, i will be showing you how you can do the continuous delivery and deployment (CD) side of things on kubernetes. 
 
