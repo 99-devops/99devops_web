@@ -288,9 +288,6 @@ Once you have the repository created it will look like this
 
 ![dockerhub-repo](/img/docker-hub-repo.png)
 
-
-Check if the image is there in dockerhub or not.
-
 ### Task 5 (Add dockerhub creds to Github secrets)
 
 Add docker hub username and access token to github secrets.
@@ -313,7 +310,7 @@ Create two secrets named <code>DOCKERHUB_USERNAME</code> and <code>DOCKERHUB_TOK
 
 ### Task 6 
 
-Setup CI workflows in github actions.
+Setup CI workflows in github actions to push image to your dockerhub repository.
 
 ### Solution 6 
 
@@ -325,7 +322,9 @@ touch .github/workflows/CI.yml
 ```
 
 Inside that CI.yml file add following code which will automatically build and push your image to dockerhub. 
-NOTE: I have have used the tag name as ${{ secrets.DOCKERHUB_USERNAME }}/crypto-app:latest where crypto-app is the name of our dockerhub repository.
+
+
+<b>NOTE: I have have used the tag name as ${{ secrets.DOCKERHUB_USERNAME }}/crypto-app:latest where crypto-app is the name of our dockerhub repository.</b>
 
 ```bash
 # This is a basic workflow to help you get started with Actions
@@ -387,7 +386,12 @@ git commit -m "Adding Continuous integration"
 git push origin master
 ```
 
-Go to actions in tabs in your repository, you should see the CI build running and pushing image to dockerhub which you can verify by going to dockerhub.
+Go to actions in tabs in your repository, you should see the CI build running and hopefully passing ;)
+
+![github-ci-pass](/img/github-ci-pass.png)
+
+
+and pushing image to dockerhub which you can verify by going to dockerhub.
 
 ![dockerhub-image-push](/img/dockerhub-image-push.png)
 
