@@ -78,7 +78,7 @@ xoxb-2387234-XXXXXX.....
 
 For this demo i have created a slack workspace, and a slack bot named "Lekhpal" (<i>This means accountant in Nepali</i> ;) )
 
-Note down following things:
+Please note down following things:
 
 1. The channel name
 
@@ -86,7 +86,7 @@ Note down following things:
 
 3. Slack token somespace
 
-You should be able to create git repo and docker hub, by yourself. 
+For github repo and docker hub account, you should be able to create them by yourself. :)
 ## Creating a crypto bot application
 
 Now, since we have setup out notification section, let's create a trading bot. Our crypto bot is simple. It will run API request to a provider to fetch crypto latest pricing information. I will be using python for this but you can use any language of your choice. 
