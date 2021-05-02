@@ -107,6 +107,7 @@ Copy paste following code into the file
 
 ```bash
 
+# Importing packages
 import os
 import requests
 import hashlib
@@ -117,10 +118,12 @@ import requests
 from time import time
 import logging
 
+# Setting log level
 logging.basicConfig(level=logging.DEBUG)
 
 
 def get_latest_crypto_price(crypto) -> str:
+""" Gets latest crypto prices"""
     headers = {
                 'Content-Type': 'application/json'
                }
@@ -130,6 +133,7 @@ def get_latest_crypto_price(crypto) -> str:
 
 
 def buy_order(CRYPTO_DICT):
+""" If crypto price if over or under certain value, it BUYs or SELLs items."""
     if CRYPTO_DICT["btc"] <= 59000:
         post_to_slack("\n\n\n :bitcoin: BTC price has dropped to defined limit cap (1.68). Buying btc Share worth AUD 10. ")
     elif CRYPTO_DICT["btc"] >= 90000:
@@ -151,6 +155,7 @@ def buy_order(CRYPTO_DICT):
         post_to_slack("\n\n\n :ada: ADA price has gone up to defined limit cap (1.9). Selling ADA Share worth AUD 20. ")
     
 def post_to_slack(text, blocks = None):
+""" Notify in Slack """
     slack_token = 'xoxb-XXXX' # Slack TOKEN here
     slack_user_name = 'Lekhapal' # Slack bot username
     slack_channel = "#crypto-trading"  # Slack channel name
@@ -165,7 +170,7 @@ def post_to_slack(text, blocks = None):
 
 
 if __name__=="__main__":
-
+    # list of crypto to watch
     CRYPTO_TO_WATCH= ["btc", "eth", "doge", "ada"]
     CRYPTO_DICT={}
     for crypto in CRYPTO_TO_WATCH:
@@ -176,6 +181,7 @@ if __name__=="__main__":
         except AttributeError:
             CRYPTO_DICT[crypto] [ CRYPTO_DICT[crypto], float(get_latest_crypto_price(crypto))]
 
+    # Send prepared json data to slack containing prices
     post_to_slack("Latest  crypto prices \n\n:bitcoin: BTC price : "+str(CRYPTO_DICT["btc"])+"\n\n:eth: ETH price : "+str(CRYPTO_DICT["eth"])+"\n\n:ada: ADA price : "+str(CRYPTO_DICT["ada"])+"\n\n:doge: DOGE price : "+str(CRYPTO_DICT["doge"])+"\n\nThat's all for now. Will check back in an hour. :slightly_smiling_face: ")
     buy_order(CRYPTO_DICT)
 
