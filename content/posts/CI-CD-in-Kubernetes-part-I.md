@@ -9,8 +9,15 @@ categories: [devops]
 
 ## PART I
 
-CI / CD has been a major part of current IT operations. In this series of we will learn how to create an application and implement it through complete CI / CD operation. We will learn how to do CI / CD of a containerised service. As there is a saying "best way to learn, is by doing.". Hence, we will be implementing our own CI / CD in kubernetes. This is the first part of series of articles on this topic as it is difficult to cover everything in one post.
+CI / CD has been a major part of current IT operations. In this series of we will learn how to create an application and implement it through complete CI / CD operation. We will learn how to do CI / CD of a containerised service. As there is a saying "best way to learn, is by doing.". Hence, we will be implementing our own CI / CD in kubernetes. This is the first part of series of articles on this topic as it is difficult to cover everything in one post. 
+
+
+### How this article is setup ?
+
+For each challenge there will be a task, which you can do it by yourself in your own way or you can follow the solution to see how i have done it. As long as you are understanding the things done and why it's done, we should be all good. 
 ## Before we begin
+
+Let's refresh the some knowledge before we start with the workshop.
 
 ### What is CI (Continuous Integration) ?
 
