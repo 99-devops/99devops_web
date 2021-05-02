@@ -15,6 +15,7 @@ CI / CD has been a major part of current IT operations. In this series of we wil
 ### How this article is organised ?
 
 For each challenge there will be a task and solution provided. You can do the task by yourself in your own way however you feel suitable or you can follow the solution to see how i have done it. As long as you are understanding the things done and why it's done, we should be all good. 
+
 ## Before we begin
 
 Let's refresh the some knowledge before we start with the workshop.
@@ -424,3 +425,6 @@ Please share it with your friends if you liked what you learned today. We aim of
 ### Congratulations on the hard work, here are some cookie for you.... :)
 
 ![cookie](/img/cookie.png)
+
+
+## **Please do not use this in production or use it to run your crypto transactions.**
