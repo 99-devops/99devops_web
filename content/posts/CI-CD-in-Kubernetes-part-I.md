@@ -1,5 +1,5 @@
 ---
-title: "Teach me CI / CD with Kubernetes (PART I)."
+title: "Learn with me - CI / CD with Kubernetes (PART I)."
 date: 2021-05-02T14:20:12+11:00
 draft: false
 description: "This article is the first article in series of articles on hands on CI / CD in kubernetes. Aim of this is to educate everyone on devops practices starting with CI / CD."
