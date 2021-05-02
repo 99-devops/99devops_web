@@ -7,6 +7,9 @@ tags: [devops, k8s]
 categories: [devops]
 ---
 
+![CICD](/img/CICD.png)
+
+
 CI / CD has been a major part of current IT operations. In this series of articles, we will learn how to create an application and implement it through complete CI / CD operation. As there is a saying "best way to learn, is by doing.". Hence, we will be implementing our own CI / CD in kubernetes. This is the first part of series of articles on this topic as it is difficult to cover everything in one post. 
 
 
