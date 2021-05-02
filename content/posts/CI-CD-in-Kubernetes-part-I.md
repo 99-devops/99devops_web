@@ -453,9 +453,13 @@ and pushing image to dockerhub which you can verify by going to dockerhub.
 7. Hands-on continuous integration
 ## Conclusion
 
-This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. In next article, i will be showing you how you can do the continuous delivery and deployment (CD) side of things on kubernetes. 
+This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. 
 
-Please share it with your friends if you liked what you learned today. We aim of this is to educate everyone on devops practices starting with CI / CD.
+## What's next ?
+
+In next article, I will be showing you how you can do the continuous delivery and deployment (CD) on kubernetes.
+
+#### Please share it with your friends if you liked what you learned today. We aim of this is to educate everyone on devops practices starting with CI / CD.
 
 ### Congratulations on the hard work, here are some cookie for you.... :)
 
