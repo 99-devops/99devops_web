@@ -16,6 +16,12 @@ CI / CD has been a major part of current IT operations. In this series of articl
 
 For each challenge there will be are tasks and solutions provided. You can do the task by yourself in your own way or you can follow the solution to see how i have done it. As long as you are understanding the things done and why it's done, we should be all good. 
 
+
+### What we are doing to do in this article
+
+![CICD](/img/CICD.png)
+
+
 ## Before we begin
 
 Let's refresh the some knowledge before we start with the workshop.
@@ -442,6 +448,12 @@ and pushing image to dockerhub which you can verify by going to dockerhub.
 ![dockerhub-image-push](/img/dockerhub-image-push.png)
 
 
+So, what just happenned ??
+
+When we committed the code, it automatically detected change in repository, and ran our build operation and for now our build operation was creating docker image as artifact and pushing it to docker hub automatically. 
+
+Congratulations, you just continuous integration of your application. 
+
 ## What did we learned ?
 
 1. Use cURL to send post requests
@@ -451,6 +463,7 @@ and pushing image to dockerhub which you can verify by going to dockerhub.
 5. Run docker image
 6. Push image to docker hub using github action
 7. Hands-on continuous integration
+
 ## Conclusion
 
 This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. 
