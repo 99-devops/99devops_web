@@ -277,7 +277,7 @@ What happens here is:
 FROM python:3.9
 
 # Label
-LABEL MAINTAINER="Prabesh.Thapa@audinate.com"
+LABEL MAINTAINER="USER-EMAIL"
 
 # Installing package
 RUN apt-get update && apt-get install -y python-dev libldap2-dev libsasl2-dev libssl-dev --no-install-recommends && apt-get clean && rm -rf /var/lib/apt/lists/*
