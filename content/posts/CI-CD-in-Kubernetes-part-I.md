@@ -1,5 +1,5 @@
 ---
-title: "Hands-on CI / CD on Kubernetes (PART I)."
+title: "Teach me CI / CD with Kubernetes (PART I)."
 date: 2021-05-02T14:20:12+11:00
 draft: false
 description: "This article is the first article in series of articles on CI / CD in kubernetes."
@@ -17,9 +17,9 @@ We will learn how to do CI / CD of a containerised service. For this, we will le
 
 ### What is CI (Continuous Integration) ?
 
-### What is CD (Continuous Deployment) ?
+CI (Continuous Integration) is a process of automating code integration from multiple contributers into a single artifact or binary or package. CI is a philosophy where code from multiple developers are merged to form a single package which is later promoted to different stages in release cycle.
 
-
+In this article we are doing to see an implemet of CI.
 
 # Learn by doing
 
@@ -199,7 +199,7 @@ DEBUG:urllib3.connectionpool:https://slack.com:443 "POST /api/chat.postMessage H
 
 In slack, you should now see your bot sending message
 
-![notification(/crypto-bot/asset.sac.png)
+![slack_notification](/img/slack_notification.png)
 
 Wooo..hooo....
 
@@ -255,7 +255,7 @@ docker run --rm --name crypto crypto-app:latest
 
 You should see the same message notification in slack.
 
-![notification(/crypto-bot/asset.sac.png)
+![slack_notification](/img/slack_notification.png)
 
 # Pushing image to registry
 
@@ -273,12 +273,16 @@ Sign up for docker hub from here [https://hub.docker.com/signup](https://hub.doc
 
 Once you have the docker hub account, you need to create a repository for your docker image that we are going to push. I have named the repo name "crypto-app" as that is the image name that we are going to use.
 
-Image
+
+![create-repo](/img/create-repo.png)
+
+
+![docker-hub-create-repo](/img/docker-hub-create-repo.png)
 
 
 Once you have the repository created it will look like this
 
-image
+![dockerhub-repo](/img/docker-hub-repo.png)
 
 
 Check if the image is there in dockerhub or not.
@@ -293,7 +297,7 @@ Now, since we are able to push image, we will try to do automatically using Gith
 
 It will look like this once you created the access token
 
-Image
+![dockerhub-access-token](/img/dockerhub-access-token.png)
 
 Now, Create github secret for your dockerhub username and access token which github will use to build and push image to dockerhub.
 
@@ -301,7 +305,7 @@ In order to create secret, go to repo Settings > Secrets.
 
 Create two secrets named <code>DOCKERHUB_USERNAME</code> and <code>DOCKERHUB_TOKEN</code> once you add it, it will look like this
 
-image
+![github-secrets](/img/github-secrets.png)
 
 ### Task 6 
 
@@ -369,7 +373,7 @@ jobs:
 
 Once you add these, you are ready to commit to github. Your main directory folder structure should look like this
 
-Image
+![directory-structure](/img/directory-structure.png)
 
 Now commit your change
 
@@ -381,6 +385,20 @@ git push origin master
 
 Go to actions in tabs in your repository, you should see the CI build running and pushing image to dockerhub which you can verify by going to dockerhub.
 
+![dockerhub-image-push](/img/dockerhub-image-push.png)
+
+
+# What did we learned ?
+
+1. Use cURL to send post requests
+2. Parse Json response using python
+3. Send message from application to slack channel
+4. Containerise python application into a docker image
+5. Run docker image
+6. Push image to docker hub using github action
+7. Hands-on continuous integration
 # Conclusion
 
 This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. In next article, i will be showing you how you can do the continuous delivery and deployment (CD) side of things on kubernetes. 
+
+Please share it with your friends if you liked and learned something from this article. Aim of this is to educate everyone on devops practices starting with CI / CD.
