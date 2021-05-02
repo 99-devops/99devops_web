@@ -2,7 +2,7 @@
 title: "Teach me CI / CD with Kubernetes (PART I)."
 date: 2021-05-02T14:20:12+11:00
 draft: false
-description: "This article is the first article in series of articles on CI / CD in kubernetes."
+description: "This article is the first article in series of articles on hands on CI / CD in kubernetes. Aim of this is to educate everyone on devops practices starting with CI / CD."
 tags: [devops, k8s]
 categories: [devops]
 ---
@@ -419,4 +419,8 @@ and pushing image to dockerhub which you can verify by going to dockerhub.
 
 This concludes the first part of our workshop. We did a lot of things here and learned a lot of stuffs. We have succesfully completed continuous integration part of our CI / CD workshop. In next article, i will be showing you how you can do the continuous delivery and deployment (CD) side of things on kubernetes. 
 
-Please share it with your friends if you liked and learned something from this article. Aim of this is to educate everyone on devops practices starting with CI / CD.
+Please share it with your friends if you liked what you learned today. We aim of this is to educate everyone on devops practices starting with CI / CD.
+
+### Congratulations on the hard work, here are some cookie for you.... :)
+
+![cookie](/img/cookie.png)
