@@ -473,9 +473,9 @@ This concludes the first part of our workshop. We did a lot of things here and l
 
 In next article, I will be showing you how you can do the continuous delivery and deployment (CD) on kubernetes.
 
-#### Please share it with your friends if you liked what you learned today. We aim of this is to educate everyone on devops practices starting with CI / CD.
+Please share it with your friends if you liked what you learned today. We aim of this is to educate everyone on devops practices starting with CI / CD.
 
-### Congratulations on the hard work, here are some cookie for you.... :)
+Congratulations on the hard work, here are some cookie for you.... :)
 
 ![cookie](/img/cookie.png)
 
