@@ -264,7 +264,7 @@ What happens here is:
 
 2. Adds label to the docker image when we create it.
 
-3. Installsrequired packages
+3. Installs required packages
 
 4. Copies the src folder into /app directory inside container
 
