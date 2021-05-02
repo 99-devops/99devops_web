@@ -9,24 +9,36 @@ categories: [devops]
 
 ## PART I
 
-CI / CD has been a major part of current IT operations. In this series of we will learn how to create an application and implement it through complete CI / CD operation. We will learn how to do CI / CD of a containerised service. As there is a saying "best way to learn, is by doing.". Hence, we will be implementing our own CI / CD in kubernetes. This is the first part of series of articles on this topic as it is difficult to cover everything in one post. 
+CI / CD has been a major part of current IT operations. In this series of articles, we will learn how to create an application and implement it through complete CI / CD operation. As there is a saying "best way to learn, is by doing.". Hence, we will be implementing our own CI / CD in kubernetes. This is the first part of series of articles on this topic as it is difficult to cover everything in one post. 
 
 
 ### How this article is organised ?
 
-For each challenge there will be a task and solution provided. You can do the task by yourself in your own way however you feel suitable or you can follow the solution to see how i have done it. As long as you are understanding the things done and why it's done, we should be all good. 
+For each challenge there will be are tasks and solutions provided. You can do the task by yourself in your own way or you can follow the solution to see how i have done it. As long as you are understanding the things done and why it's done, we should be all good. 
 
 ## Before we begin
 
 Let's refresh the some knowledge before we start with the workshop.
 
-### What is CI (Continuous Integration) ?
+#### What is CI (Continuous Integration) ?
 
 CI (Continuous Integration) is a process of automating code integration from multiple contributers into a single artifact or binary or package. CI is a philosophy where code from multiple developers are merged to form a single package which is later promoted to different stages in release cycle.
 
 In this article we are doing to see an implemet of CI.
 
-## Learn by doing
+#### What is ChatOps ?
+
+ChatOps is the streamlined use of chat applications and communication services to run development and operations functions and commands in CI / CD life cycle.
+
+#### What is Github ?
+
+Version control system which helps you to manage different versions of your code.
+
+#### What is Docker hub ?
+
+Dockerhub is a online docker image hosting registry where you can push your docker image and share it with comminuty.
+
+### Learn by doing
 
 In this first part, we will create an application and dockerise it. This would invole creating an application from scratch and containerise it using docker.
 
@@ -105,13 +117,20 @@ Write a program which would give the latest crypto information and push that inf
 
 ### Solution 2
 
-let's first create a file and  name it "crypto-app.py"
+let's first create a folder where we will put all our source code and name it "src" and create a file named "crypto-app.py" inside it.  
 
 ```
+mkdir -p src
 touch crypto-app.py
 ```
 
-Copy paste following code into the file
+What this application does is: 
+
+1. It uses COINSPOT public API to get latest price of defined cryptos and creates a JSON data.
+
+2. JSON data is then sent to a function which pushes message to slack channel which we configured in Task 1.
+
+You can copy paste following code into the file
 
 ```bash
 
@@ -201,22 +220,16 @@ Now, run you application to see if your application send the messages to slack. 
 python3 src/crypto-app.py     
 
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.coinspot.com.au:443
-DEBUG:urllib3.connectionpool:https://www.coinspot.com.au:443 "GET /pubapi/latest HTTP/1.1" 200 None
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.coinspot.com.au:443
-DEBUG:urllib3.connectionpool:https://www.coinspot.com.au:443 "GET /pubapi/latest HTTP/1.1" 200 None
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.coinspot.com.au:443
-DEBUG:urllib3.connectionpool:https://www.coinspot.com.au:443 "GET /pubapi/latest HTTP/1.1" 200 None
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.coinspot.com.au:443
-DEBUG:urllib3.connectionpool:https://www.coinspot.com.au:443 "GET /pubapi/latest HTTP/1.1" 200 None
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): slack.com:443
-DEBUG:urllib3.connectionpool:https://slack.com:443 "POST /api/chat.postMessage HTTP/1.1" 200 454
+...
+..
+..
 ```
 
 In slack, you should now see your bot sending message
 
 ![slack_notification](/img/slack_notification.png)
 
-Wooo..hooo....
+Wooo..hooo.... :)
 
 Congratulations. You have created a bot which checks BTC price and does fake buys of BTC and notifies in slack about your transaction.
 
@@ -230,7 +243,27 @@ Write a Dockerfile for your application
 
 ### Solution 3
 
-Here is the Dockerfile of my application. 
+Create a dockerfile into the main working directory i.e crypto-bot directory.
+
+```
+touch Dockerfile
+```
+
+Copy and paste the following contents of into that Dockerfile. 
+
+What happens here is:
+
+1. It pulls the base python:3.9 image from dockerhub
+
+2. Adds label to the docker image when we create it.
+
+3. Installsrequired packages
+
+4. Copies the src folder into /app directory inside container
+
+5. Installs all the extra packages required to run the applications from requirements.txt file
+
+6. Starts the application
 
 ```bash
 # Base Image
@@ -335,7 +368,9 @@ touch .github/workflows/CI.yml
 Inside that CI.yml file add following code which will automatically build and push your image to dockerhub. 
 
 
-<b>NOTE: I have have used the tag name as ${{ secrets.DOCKERHUB_USERNAME }}/crypto-app:latest where crypto-app is the name of our dockerhub repository.</b>
+#### **NOTE: I have have used the tag name as ${{ secrets.DOCKERHUB_USERNAME }}/crypto-app:latest where crypto-app is the name of our dockerhub repository.**
+
+
 
 ```bash
 # This is a basic workflow to help you get started with Actions
@@ -397,7 +432,7 @@ git commit -m "Adding Continuous integration"
 git push origin master
 ```
 
-Go to actions in tabs in your repository, you should see the CI build running and hopefully passing ;)
+When you commit the change into github, you can go to actions in tabs in your repository, you should see the CI build running and hopefully passing ;). This builds docker image from the Dockerfile that we created and tags the image appropriately so that it is pushed in the docker hub repo that we created.
 
 ![github-ci-pass](/img/github-ci-pass.png)
 
@@ -427,4 +462,4 @@ Please share it with your friends if you liked what you learned today. We aim of
 ![cookie](/img/cookie.png)
 
 
-## **Please do not use this in production or use it to run your crypto transactions.**
+## **While this project that we created is a base line for your future iterations and optimisation, please do not use this in production or use it to run your crypto transactions. We will be implementing DevSecOps practices later in upcoming articles.**
