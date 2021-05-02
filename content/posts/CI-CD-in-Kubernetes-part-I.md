@@ -137,7 +137,7 @@ What this application does is:
 
 2. JSON data is then sent to a function which pushes message to slack channel which we configured in Task 1.
 
-You can copy paste following code into the file
+You can copy paste following code into the file. Please do not mind the poor programming paradigms, this was just a PoC. Later we will refactor the app to be more better, faster and optimised.
 
 ```bash
 
