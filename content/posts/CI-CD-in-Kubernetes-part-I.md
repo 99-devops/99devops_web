@@ -466,4 +466,4 @@ In next article, I will be showing you how you can do the continuous delivery an
 ![cookie](/img/cookie.png)
 
 
-##### **While this project that we created is a base line for your future iterations and optimisation, please do not use this in production or use it to run your crypto transactions. We will be implementing DevSecOps practices later in upcoming articles.**
+##### **While this project that we created is a baseline for your future iterations and optimisation, please do not use this in production or use it to run your crypto transactions.This is created only for knowledge and training purpose.**
