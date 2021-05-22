@@ -76,7 +76,7 @@ Allow following TCP ports on your server.
 
 ![SECURITY_GROUP](/img/SECURITY_GROUP.png)
 
-**NOTE: For this tutorial, i am exposing this server to everyone. In production usage, you should setup appropriate source IP address there. If server needs to be exposed to the internet and it is not possible to whitelist IP then see suggestions in RECOMMENDATION section.**
+**NOTE: For this tutorial, i am exposing this server to everyone. In production, you should setup appropriate source IP address there. If server needs to be exposed to the internet and it is not possible to whitelist IP then see suggestions in RECOMMENDATION section.**
 
 Now we are ready to configure FTP server.
 
