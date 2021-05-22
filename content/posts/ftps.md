@@ -27,6 +27,18 @@ The. Key difference between SFTP and FTPS is both use different protocol. SFTP u
 
 FTPS is a secure file transfer protocol to transfer files from one server to another. It uses strong algorithms like AES, and Triple DES to encrypt file transfers. FTPS is to FTP like HTTPS is to HTTP. FTPS uses two seperate connections which decouples the FTP operations.
 
+** What is FTP in passive mode ?**
+
+In passive mode (PASV) FTP client opens up a random port and initiates connection to FTP server at port 21. It issues PASV command. PASV command basically means "Can you tell me the ip address and port is should use to connect to server ?".
+
+Then, FTP server replys with a random port which it opens up for data connection. Server creates a random port and sends the port to the client and waits for client to initiate data connection.
+
+FTP client receives the information and opens up another connection using a random port on client side with random port passed from server for data connection. 
+
+Once connection is established, data transfer is then done using these random ports.
+
+![PASV](/img/PASV.png)
+
 ## Which one should I use SFTP or FTPS?
 
 Both protocols are secure to transfer data over FTP and boils down to what requirements you have. SFTP has some severe performance issues with large files and high latency connections hence if the distance is large then SFTP limitations starts to become significant. If compliance is a concern for you and your organisation and want to adhere to PCI DSS, HIPAA or SOX then using FTPS is recommended. 
