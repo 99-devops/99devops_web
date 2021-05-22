@@ -143,8 +143,9 @@ Delete everything from /etc/vsftpd/vsftpd.conf as we are going to use fresh conf
 Add following lines  in /etc/vsftpd/vsftpd.conf. What each command does is described in the comment.
 
 ```
-# Listen on IPv6
+# Enabling this would run FTP server on stand-alone mode
 listen=NO
+
 listen_ipv6=YES
 
 # disable anonymous login
