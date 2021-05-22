@@ -76,6 +76,8 @@ Allow following TCP ports on your server.
 
 ![SECURITY_GROUP](/img/SECURITY_GROUP.png)
 
+**NOTE: For this tutorial, i am exposing this server to everyone. In production usage, you should setup appropriate source IP address there. If server needs to be exposed to the internet and it is not possible to whitelist IP then see suggestions in RECOMMENDATION section.**
+
 Now we are ready to configure FTP server.
 
 ### Generating self signed certificate
@@ -279,6 +281,9 @@ And FTP directory should be shown
 
 ## Recommendation:
 
-It is not good practice to expose server public ip and access directly from the internet, if it requires accessing via the internet, please move the server behind a classic load balancer like ELB and make sure ports are mapped correctly on the LB.
+It is not good practice to expose server public ip and access directly from the internet, if it requires accessing via the internet, please move the server behind a classic load balancer like ELB and make sure ports are mapped correctly on the LB. FTP requests should be coming into you LB and then forwarded to your server. Your server should only be receiving data originating from the LB not the internet.
+
+Client -> LB -> Firewall(ACL) -> Server
 
 Also, if ELB is used, a change is required on the vsftpd.conf file which is “ pasv_address” should include the ELB ip address not the server. 
+
