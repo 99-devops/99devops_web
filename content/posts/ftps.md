@@ -191,7 +191,7 @@ Mkdir -p /var/ftp
 Now, add user who would be able to access FTP server. Add user, change. User password and make sure home directory is configured as user would access the same directory via FTP
 
 ```
-mkdir /va
+mkdir /var/ftp
 useradd ftp-user
 passwd ftp-user
 usermod -d /var/ftp ftp-user
