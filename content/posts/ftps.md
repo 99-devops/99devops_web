@@ -68,19 +68,19 @@ Once your DNS has been added and you have tested, you can access (SSH) into you 
 
 Allow following TCP ports on your server. 
 
-10000-10100 – FTP ports for data connection
+**10000-10100** – FTP ports for data connection
 
-22		- SSH port
+**22**		- SSH port
 
-21		- FTP port for command connection
+**21**		- FTP port for command connection
 
 ![SECURITY_GROUP](/img/SECURITY_GROUP.png)
 
 Now we are ready to configure FTP server.
 
-SSH into your machine
+### Generating self signed certificate
 
-Create a folder for your certs and go inside that folder
+SSH into your VM and Create a folder for your certs and go inside that folder
 ```
 mkdir -p /etc/ssl/private
 cd /etc/ssl/private
@@ -120,7 +120,10 @@ Check if certs are there are not
 ```
 Now we have generate our self-signed certificate. Let’s configure FTP
 
-Search if repo is available, if available install
+### Installing and configuring FTP
+
+Search if vsftpd package is available, if available install vsftpd.
+
 ```
 % yum search vsftp
 
@@ -133,8 +136,9 @@ vsftpd.x86_64 : Very Secure Ftp Daemon
 % yum install -y vsftpd
 ```
 
+Delete everything from /etc/vsftpd/vsftpd.conf as we are going to use fresh configuration and write everything by ourself. 
 
-Delete everything from /etc/vsftpd/vsftpd.conf and add following lines  in /etc/vsftpd/vsftpd.conf
+Add following lines  in /etc/vsftpd/vsftpd.conf. What each command does is described in the comment.
 
 ```
 # Listen on IPv6
@@ -226,6 +230,9 @@ Check if vsftpd is running
 May 22 08:51:39 ip-172-31-82-212.ec2.internal systemd[1]: Starting Vsftpd ftp daemon>
 May 22 08:51:39 ip-172-31-82-212.ec2.internal systemd[1]: Started Vsftpd ftp daemon.
 ```
+
+### Creating FTP user and directory
+
 Make directory for the FTP user
 ```
 Mkdir -p /var/ftp
@@ -242,9 +249,7 @@ chown -R ftp-user:ftp-user /var/ftp
 
 Now open any FTP client and access the server. For test , I am using FileZilla
 
-On filezilla go to 
-
-File > Site Manager, fill the blanks as shown in the image below
+On filezilla go to **File > Site Manager**, fill the blanks as shown in the image below
 
 ![FILEZILLA](/img/FILEZILLA.png)
 
