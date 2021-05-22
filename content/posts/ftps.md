@@ -232,6 +232,6 @@ And FTP directory should be shown
 
 ## Recommendation:
 
-It is not good practice to expose the server directly to internet, if it requires accessing via the web, please move the server behind a classic load balancer like ELB and make sure ports are mapped correctly on the LB.
+It is not good practice to expose server public ip and access directly from the internet, if it requires accessing via the internet, please move the server behind a classic load balancer like ELB and make sure ports are mapped correctly on the LB.
 
 Also, if ELB is used, a change is required on the vsftpd.conf file which is “ pasv_address” should include the ELB ip address not the server. 
