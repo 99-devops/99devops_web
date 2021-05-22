@@ -55,7 +55,9 @@ Once your DNS has been added and you have tested, you can access (SSH) into you 
 Allow following TCP ports on your server. 
 
 10000-10100 – FTP ports for data connection
+
 22		- SSH port
+
 21		- FTP port for command connection
 
 ![SECURITY_GROUP](/img/SECURITY_GROUP.png)
