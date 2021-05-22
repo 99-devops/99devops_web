@@ -13,21 +13,21 @@ Today we are going to learn about FTP and how we can set up a FTP server with TL
 
 ## Refresher
 
-** What is FTP?**
+**What is FTP?**
 
 FTP stands for file transfer protocol which is a way of transferring files between computers. 
 
-Fun facts: FTP itself is a noun and a verb.
+**Fun facts: FTP itself is a noun and a verb.**
 
-** SFTP vs FTPS?**
+**SFTP vs FTPS?**
 
 The. Key difference between SFTP and FTPS is both use different protocol. SFTP uses SSH for transferring files as means of secure communication whereas FTPS uses TLS certificates. FTPS is more secure as it added extra security with passwords, TLS certificates. 
 
-** What is FTPS?**
+**What is FTPS?**
 
 FTPS is a secure file transfer protocol to transfer files from one server to another. It uses strong algorithms like AES, and Triple DES to encrypt file transfers. FTPS is to FTP like HTTPS is to HTTP. FTPS uses two seperate connections which decouples the FTP operations.
 
-** What is FTP in passive mode ?**
+**What is FTP in passive mode and how does it work?**
 
 In passive mode (PASV) FTP client opens up a random port and initiates connection to FTP server at port 21. It issues PASV command. PASV command basically means "Can you tell me the ip address and port is should use to connect to server ?".
 
