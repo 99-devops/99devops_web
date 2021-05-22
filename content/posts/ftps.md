@@ -25,11 +25,13 @@ The. Key difference between SFTP and FTPS is both use different protocol. SFTP u
 
 **#### What is FTPS?**
 
-FTPS is a secure file transfer protocol to transfer files from one server to another. It uses strong algorithms like AWS, and Triple DES to encrypt file transfers.
+FTPS is a secure file transfer protocol to transfer files from one server to another. It uses strong algorithms like AES, and Triple DES to encrypt file transfers. FTPS is to FTP like HTTPS is to HTTP. FTPS uses two seperate connections which decouples the FTP operations.
 
 ## Which one should I use SFTP or FTPS?
 
-Both protocols are secure to transfer data over FTP and boils down to what requirements you have. SFTP has some severe performance issues with large files and high latency connections hence if the distance is large then SFTP limitations starts to become significant. If compliance is a concern for you and your organisation and want to adhere to PCI DSS, HIPAA or SOX then using FTPS is recommended.
+Both protocols are secure to transfer data over FTP and boils down to what requirements you have. SFTP has some severe performance issues with large files and high latency connections hence if the distance is large then SFTP limitations starts to become significant. If compliance is a concern for you and your organisation and want to adhere to PCI DSS, HIPAA or SOX then using FTPS is recommended. 
+
+If you want easy approach then using SFTP shoud be fine but if you want more security then go for FTPS which we are doing today. 
 
 ## Configuring FTPS on AWS EC2 with self-signed certificate 
 
