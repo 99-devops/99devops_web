@@ -37,8 +37,8 @@ Today we are going to configure FTPS in passive mode.
 
 Requirements:
 
-1.	VM (EC2)
-2.	Load balancer (ELB)
+1.	AWS ACCOUNT
+2.	VM (EC2)
 
 Image our FTP domain name is ftp.99devops.com then we will need to have a proper certificate. For now, I will be creating a self-signed corticate but for production, it would be good to use a proper CA signed certificate
 
