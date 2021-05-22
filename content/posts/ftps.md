@@ -1,6 +1,6 @@
 ---
 title: "Understanding and configuring FTPS/TLS in AWS EC2 instance."
-date: 2021-01-25T14:20:12+11:00
+date: 2021-05-22T14:20:12+11:00
 draft: false
 description: "Configuring FTPS/TLS in AWS EC2 instance."
 tags: [devops, k8s]
