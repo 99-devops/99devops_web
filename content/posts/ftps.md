@@ -46,15 +46,17 @@ Create VM in AWS ec2. Once VM is created, make sure its running had it is gettin
 
 ![VM_RUNNING_IMAGE](/img/VM_RUNNING_IMAGE.png)
 
-Add the DNS record on DNS server for ftp.
+Now, Add the DNS record on DNS server for ftp. Add a A record for this FTP server on your DNS server. I am using cloudflare as my DNS server.
 
-Go to Security group which is attached to your VM and add followings
+![CF_FTP](/img/CF_FTP.png)
+
+Once your DNS has been added and you have tested, you can access (SSH) into you VM using your DNS address. Go to Security groups on AWS which is attached to your VM and add followings
 
 Allow following TCP ports on your server. 
 
-10000-10100 – FTP ports in PASV mode
+10000-10100 – FTP ports for data connection
 22		- SSH port
-21		- FTP port
+21		- FTP port for command connection
 
 ![SECURITY_GROUP](/img/SECURITY_GROUP.png)
 
