@@ -151,7 +151,7 @@ connect_from_port_20=YES
 ftp_data_port=20
 
 pasv_enable=Yes
-pasv_address=100.XX.XX.XX
+pasv_address=100.XX.XX.XX # <= SERVER IP HERE
 pasv_promiscuous=YES
 pasv_min_port=10000
 pasv_max_port=10100
