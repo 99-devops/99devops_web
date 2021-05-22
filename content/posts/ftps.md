@@ -125,34 +125,58 @@ vsftpd.x86_64 : Very Secure Ftp Daemon
 Delete everything from /etc/vsftpd/vsftpd.conf and add following lines  in /etc/vsftpd/vsftpd.conf
 
 ```
+# Listen on IPv6
 listen=NO
 listen_ipv6=YES
+
+# disable anonymous login
 anonymous_enable=NO
+
+# allow local uses to login
 local_enable=YES
+
+# Uncomment this to enable any form of FTP write command.
 write_enable=YES
+
+# The value that the umask for file creation is set to for local users
 local_umask=022
+
+# If enabled, users of the FTP server can be shown messages when they first enter a new directory
 dirmessage_enable=YES
+
+# using local time
 use_localtime=YES
+
+# logs
 xferlog_enable=YES
+
+# This controls whether PORT style data connections use port 20 (ftp-data) on the server machine.
 connect_from_port_20=YES
+
+# local users will be (by default) placed in a chroot() jail in their home directory after login
 chroot_local_user=YES
+
+# Workaround chroot check.
 allow_writeable_chroot=YES
+
+# String for the PAM service name vsftpd will use
 pam_service_name=vsftpd
-# Certificate
+
+# Certificate information
 rsa_cert_file=/etc/ssl/private/vsftpd.crt
 rsa_private_key_file=/etc/ssl/private/vsftpd.key
 require_ssl_reuse=NO
+
+# Configure FTP over TLS options
 ssl_ciphers=HIGH
 ssl_enable=Yes
 allow_anon_ssl=NO
 force_local_data_ssl=YES
 force_local_logins_ssl=YES
 
-port_enable=NO
-connect_from_port_20=YES
-ftp_data_port=20
-
+# Configure FTP PASV mode settings
 pasv_enable=Yes
+port_enable=NO
 pasv_address=100.XX.XX.XX # <= SERVER IP HERE
 pasv_promiscuous=YES
 pasv_min_port=10000
@@ -160,7 +184,11 @@ pasv_max_port=10100
 allow_writeable_chroot=YES
 ssl_tlsv1=YES
 ssl_sslv2=NO
-ssl_sslv3=NO 
+ssl_sslv3=NO
+
+# Disabling this option allows vsftpd to run with less privileges, but may be incompatible with some FTP clients.
+connect_from_port_20=NO
+ftp_data_port=NO
 ```
 
 Save the file and restart vsftpd service
