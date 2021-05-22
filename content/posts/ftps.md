@@ -151,7 +151,7 @@ connect_from_port_20=YES
 ftp_data_port=20
 
 pasv_enable=Yes
-pasv_address=100.26.100.189
+pasv_address=100.XX.XX.XX
 pasv_promiscuous=YES
 pasv_min_port=10000
 pasv_max_port=10100
@@ -215,7 +215,7 @@ Enter password and you should be able to access server via FTP
 On the logs you should see something like this
 
 ```
-Status:      	Connecting to 100.26.100.189:21...
+Status:      	Connecting to 100.[REDACTED_IP]:21...
 Status:      	Connection established, waiting for welcome message...
 Status:      	Initializing TLS...
 Status:      	Verifying certificate...
